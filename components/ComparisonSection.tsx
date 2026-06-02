@@ -118,37 +118,44 @@ export default function ComparisonSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-white/5 transition-all min-h-[450px]"
+            className="relative group"
           >
-            <div className="flex items-center gap-4 mb-8 pb-6 border-b border-white/5">
-              <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-2xl">
-                🤖
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-gray-600/20 to-gray-400/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity blur" />
+            <div className="relative bg-white/8 backdrop-blur-2xl rounded-3xl p-8 lg:p-10 border border-white/10 transition-all min-h-[450px] hover:bg-white/10 hover:border-white/20">
+              <div className="flex items-center gap-4 mb-8 pb-6 border-b border-white/10">
+                <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-2xl">
+                  🤖
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-300">
+                  Your AI
+                </h3>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-400">Your AI</h3>
-            </div>
-            <div className="text-gray-400 text-lg leading-relaxed">
-              <AnimatePresence mode="wait">
-                {showContent && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <p className="italic mb-8">{currentQA.generic.response}</p>
-                    <div className="mt-8 pt-6 border-t border-white/5 space-y-3 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-gray-500">Source:</span>
-                        <span className="text-gray-600">Unknown</span>
+              <div className="text-gray-400 text-lg leading-relaxed">
+                <AnimatePresence mode="wait">
+                  {showContent && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      <p className="italic mb-8">
+                        {currentQA.generic.response}
+                      </p>
+                      <div className="mt-8 pt-6 border-t border-white/5 space-y-3 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Source:</span>
+                          <span className="text-gray-600">Unknown</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">Updated:</span>
+                          <span className="text-gray-600">Unknown</span>
+                        </div>
                       </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-500">Updated:</span>
-                        <span className="text-gray-600">Unknown</span>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
           </motion.div>
 
@@ -157,59 +164,62 @@ export default function ComparisonSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-teal-primary/20 transition-all min-h-[450px] shadow-[0_0_60px_rgba(0,212,170,0.1)] hover:shadow-[0_0_80px_rgba(0,212,170,0.15)]"
+            className="relative group"
           >
-            <div className="flex items-center gap-4 mb-8 pb-6 border-b border-teal-primary/20">
-              <div className="w-14 h-14 rounded-2xl bg-teal-primary/20 flex items-center justify-center text-2xl">
-                📊
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-primary/30 to-cyan-400/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity blur-xl" />
+            <div className="relative bg-gradient-to-br from-teal-primary/15 to-cyan-400/5 backdrop-blur-2xl rounded-3xl p-8 lg:p-10 border border-teal-primary/30 transition-all min-h-[450px] hover:border-teal-primary/50 shadow-[0_0_30px_rgba(0,212,170,0.2)] hover:shadow-[0_0_60px_rgba(0,212,170,0.3)]">
+              <div className="flex items-center gap-4 mb-8 pb-6 border-b border-teal-primary/20">
+                <div className="w-14 h-14 rounded-2xl bg-teal-primary/20 flex items-center justify-center text-2xl">
+                  📊
+                </div>
+                <h3 className="text-2xl font-semibold bg-gradient-to-r from-teal-primary to-cyan-400 bg-clip-text text-transparent">
+                  SWFL Data Gulf
+                </h3>
               </div>
-              <h3 className="text-2xl font-semibold text-teal-primary">
-                SWFL Data Gulf
-              </h3>
-            </div>
-            <div className="text-white text-lg leading-relaxed font-mono">
-              <AnimatePresence mode="wait">
-                {showContent && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.4 }}
-                    className="space-y-6"
-                  >
-                    <div className="p-6 bg-teal-primary/10 rounded-2xl border-l-4 border-teal-primary">
-                      <div className="text-3xl font-bold text-teal-primary mb-2">
-                        {currentQA.data.value}
-                      </div>
-                      {currentQA.data.subtext && (
-                        <div className="text-xl text-white">
-                          {currentQA.data.subtext}
+              <div className="text-white text-lg leading-relaxed font-mono">
+                <AnimatePresence mode="wait">
+                  {showContent && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.4 }}
+                      className="space-y-6"
+                    >
+                      <div className="p-6 bg-teal-primary/10 rounded-2xl border-l-4 border-teal-primary">
+                        <div className="text-3xl font-bold text-teal-primary mb-2">
+                          {currentQA.data.value}
                         </div>
-                      )}
-                    </div>
-                    <div className="mt-8 pt-6 border-t border-teal-primary/10 space-y-3 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-gray-400">Source:</span>
-                        <span className="text-teal-primary">
-                          {currentQA.data.source}
-                        </span>
+                        {currentQA.data.subtext && (
+                          <div className="text-xl text-white">
+                            {currentQA.data.subtext}
+                          </div>
+                        )}
                       </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-400">Freshness:</span>
-                        <span className="text-teal-primary">
-                          {currentQA.data.freshness}
-                        </span>
+                      <div className="mt-8 pt-6 border-t border-teal-primary/10 space-y-3 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-gray-400">Source:</span>
+                          <span className="text-teal-primary">
+                            {currentQA.data.source}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-400">Freshness:</span>
+                          <span className="text-teal-primary">
+                            {currentQA.data.freshness}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-400">Confidence:</span>
+                          <span className="text-teal-primary">
+                            {currentQA.data.confidence}
+                          </span>
+                        </div>
                       </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-400">Confidence:</span>
-                        <span className="text-teal-primary">
-                          {currentQA.data.confidence}
-                        </span>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
           </motion.div>
         </div>

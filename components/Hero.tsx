@@ -177,31 +177,39 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gradient leading-tight mb-6">
-              The Proof Is In The Data
+            <div className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-teal-primary/10 to-cyan-400/10 border border-teal-primary/20 rounded-full">
+              <span className="text-sm font-medium text-teal-primary">
+                ✨ AI Data Layer for SWFL
+              </span>
+            </div>
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-tight mb-6 bg-gradient-to-br from-white via-teal-primary to-cyan-400 bg-clip-text text-transparent">
+              Real Data. Real Answers.
             </h1>
-            <p className="text-lg md:text-xl text-gray-400 font-normal leading-relaxed max-w-xl">
-              Southwest Florida's AI-ready data layer for property, labor,
-              permits, commercial real estate, and tourism intelligence.
+            <p className="text-lg md:text-xl text-gray-300 font-light leading-relaxed max-w-xl">
+              Stop guessing. Get instant access to Southwest Florida's most
+              accurate property, labor, permits, and market intelligence—powered
+              by AI.
             </p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex gap-4 flex-wrap"
+            className="flex gap-4 flex-wrap pt-4"
           >
             <motion.button
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-gradient-to-r from-teal-primary to-teal-secondary text-navy-dark px-8 py-4 rounded-xl font-semibold text-base transition-all shadow-lg shadow-teal-primary/25 hover:shadow-teal-primary/40"
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative px-8 py-4 font-semibold text-base text-navy-dark rounded-xl overflow-hidden group"
             >
-              Connect Your AI
+              <div className="absolute inset-0 bg-gradient-to-r from-teal-primary via-cyan-400 to-teal-primary transition-all group-hover:scale-110" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-white/10 transition-opacity" />
+              <span className="relative">Connect Your AI</span>
             </motion.button>
             <motion.button
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-white/5 text-white px-8 py-4 rounded-xl font-medium text-base border border-white/10 transition-all hover:bg-white/10 hover:border-white/20 backdrop-blur-sm"
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 rounded-xl font-semibold text-base text-white border-2 border-teal-primary/50 bg-white/5 backdrop-blur-xl transition-all hover:bg-white/10 hover:border-teal-primary shadow-lg shadow-teal-primary/0 hover:shadow-teal-primary/20"
             >
               See How It Works
             </motion.button>
