@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,27 +56,27 @@ export default function Header() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="hidden md:flex items-center gap-8"
         >
-          <a
+          <Link
             href="#"
             className="relative text-gray-400 hover:text-white transition-colors group"
           >
             Features
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-primary transition-all group-hover:w-full" />
-          </a>
-          <a
+          </Link>
+          <Link
             href="#"
             className="relative text-gray-400 hover:text-white transition-colors group"
           >
             Pricing
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-primary transition-all group-hover:w-full" />
-          </a>
-          <a
+          </Link>
+          <Link
             href="#"
             className="relative text-gray-400 hover:text-white transition-colors group"
           >
             Documentation
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-primary transition-all group-hover:w-full" />
-          </a>
+          </Link>
           <motion.button
             whileHover={{ scale: 1.05, y: -1 }}
             whileTap={{ scale: 0.98 }}
