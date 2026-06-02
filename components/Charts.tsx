@@ -126,9 +126,12 @@ export default function Charts() {
           className="grid lg:grid-cols-2 gap-8 mb-12"
         >
           {/* Corridor Rents - Horizontal Bar Chart */}
-          <motion.div variants={chartVariants} className="relative group">
+          <motion.div
+            variants={chartVariants}
+            className="relative group card-hover"
+          >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-primary/20 to-cyan-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur" />
-            <div className="relative bg-white/10 border border-teal-primary/30 rounded-2xl p-8 backdrop-blur-xl hover:bg-white/[0.15] hover:border-teal-primary/40 transition-all">
+            <div className="relative glass-card-modern border border-teal-primary/30 rounded-2xl p-8 hover:border-teal-primary/40 transition-all">
               <h3 className="text-xl font-bold text-white mb-2">
                 Corridor Rents
               </h3>
@@ -179,9 +182,12 @@ export default function Charts() {
           </motion.div>
 
           {/* Home Values - Area Chart */}
-          <motion.div variants={chartVariants} className="relative group">
+          <motion.div
+            variants={chartVariants}
+            className="relative group card-hover"
+          >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-primary/20 to-cyan-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur" />
-            <div className="relative bg-white/10 border border-teal-primary/30 rounded-2xl p-8 backdrop-blur-xl hover:bg-white/[0.15] hover:border-teal-primary/40 transition-all">
+            <div className="relative glass-card-modern border border-teal-primary/30 rounded-2xl p-8 hover:border-teal-primary/40 transition-all">
               <h3 className="text-xl font-bold text-white mb-2">
                 36-Month Home Values
               </h3>
@@ -275,7 +281,7 @@ export default function Charts() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`bg-white/10 border rounded-2xl p-6 backdrop-blur-xl hover:bg-white/[0.15] transition-all hover:scale-105 ${
+              className={`glass-card-modern border rounded-2xl p-6 transition-all hover:scale-105 ${
                 metric.color === "teal"
                   ? "border-teal-primary/30 hover:border-teal-primary/50"
                   : "border-cyan-400/30 hover:border-cyan-400/50"

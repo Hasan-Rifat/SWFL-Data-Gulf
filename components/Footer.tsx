@@ -73,7 +73,7 @@ export default function Footer() {
                   href={social.href}
                   aria-label={social.label}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-teal-primary hover:border-teal-primary hover:text-navy-dark transition-all"
+                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-teal-primary hover:border-teal-primary hover:text-navy-dark transition-all card-hover"
                 >
                   {social.icon}
                 </motion.a>
@@ -124,7 +124,7 @@ export default function Footer() {
             </div>
 
             {/* Status Indicator */}
-            <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2">
+            <div className="flex items-center gap-2 glass-card-modern border border-teal-primary/30 rounded-full px-4 py-2">
               <span className="w-2 h-2 bg-teal-primary rounded-full animate-pulse" />
               <span className="text-xs text-gray-400">Systems Operational</span>
             </div>
@@ -134,7 +134,7 @@ export default function Footer() {
 
       {/* Ambient Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-primary/5 rounded-full blur-3xl animate-pulse-glow" />
       </div>
     </footer>
   );

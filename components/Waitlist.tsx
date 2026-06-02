@@ -85,7 +85,7 @@ export default function Waitlist() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="bg-gradient-to-br from-teal-primary/20 to-cyan-400/10 border border-teal-primary/30 rounded-2xl p-12 text-center"
+              className="glass-card-modern border border-teal-primary/30 rounded-2xl p-12 text-center glow-teal"
             >
               <motion.div
                 animate={{ scale: [1, 1.1, 1] }}
@@ -118,7 +118,7 @@ export default function Waitlist() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@example.com"
-                    className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-teal-primary/50 focus:bg-white/10 transition-all"
+                    className="w-full pl-12 pr-4 py-4 input-modern rounded-xl text-white placeholder-gray-500"
                   />
                 </div>
               </motion.div>
@@ -144,7 +144,7 @@ export default function Waitlist() {
                       whileTap={{ scale: 0.95 }}
                       className={`px-4 py-3 rounded-lg font-medium transition-all text-sm ${
                         interests.includes(option.id)
-                          ? "bg-teal-primary text-navy-dark border border-teal-primary"
+                          ? "btn-gradient text-navy-dark border border-teal-primary"
                           : "bg-white/5 text-white border border-white/10 hover:bg-white/10"
                       }`}
                     >
@@ -165,7 +165,7 @@ export default function Waitlist() {
                 disabled={isLoading || interests.length === 0}
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-teal-primary to-teal-secondary text-navy-dark py-4 rounded-xl font-semibold text-base transition-all shadow-lg shadow-teal-primary/25 hover:shadow-teal-primary/40 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full btn-gradient text-navy-dark py-4 rounded-xl font-semibold text-base transition-all shadow-lg shadow-teal-primary/25 hover:shadow-teal-primary/40 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading ? "Joining..." : "Join Waitlist"}
               </motion.button>

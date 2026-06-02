@@ -80,7 +80,7 @@ export default function Header() {
           <motion.button
             whileHover={{ scale: 1.05, y: -1 }}
             whileTap={{ scale: 0.98 }}
-            className="bg-gradient-to-r from-teal-primary to-teal-secondary text-navy-dark px-6 py-2.5 rounded-xl font-medium transition-all shadow-lg shadow-teal-primary/20 hover:shadow-teal-primary/40"
+            className="btn-gradient text-navy-dark px-6 py-2.5 rounded-xl font-medium transition-all shadow-lg shadow-teal-primary/25 hover:shadow-teal-primary/40"
           >
             Get Started
           </motion.button>

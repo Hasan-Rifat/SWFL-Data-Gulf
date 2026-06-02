@@ -118,10 +118,10 @@ export default function ComparisonSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="relative group"
+            className="relative group card-hover"
           >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-gray-600/20 to-gray-400/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity blur" />
-            <div className="relative bg-white/8 backdrop-blur-2xl rounded-3xl p-8 lg:p-10 border border-white/10 transition-all min-h-[450px] hover:bg-white/10 hover:border-white/20">
+            <div className="relative glass-card-modern rounded-3xl p-8 lg:p-10 border border-white/10 transition-all min-h-[450px] hover:border-white/20">
               <div className="flex items-center gap-4 mb-8 pb-6 border-b border-white/10">
                 <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-2xl">
                   🤖
@@ -164,10 +164,10 @@ export default function ComparisonSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative group"
+            className="relative group card-hover"
           >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-primary/30 to-cyan-400/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity blur-xl" />
-            <div className="relative bg-gradient-to-br from-teal-primary/15 to-cyan-400/5 backdrop-blur-2xl rounded-3xl p-8 lg:p-10 border border-teal-primary/30 transition-all min-h-[450px] hover:border-teal-primary/50 shadow-[0_0_30px_rgba(0,212,170,0.2)] hover:shadow-[0_0_60px_rgba(0,212,170,0.3)]">
+            <div className="relative glass-card-modern rounded-3xl p-8 lg:p-10 border border-teal-primary/30 transition-all min-h-[450px] hover:border-teal-primary/50 glow-teal hover:glow-teal-strong">
               <div className="flex items-center gap-4 mb-8 pb-6 border-b border-teal-primary/20">
                 <div className="w-14 h-14 rounded-2xl bg-teal-primary/20 flex items-center justify-center text-2xl">
                   📊

@@ -177,7 +177,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-teal-primary/10 to-cyan-400/10 border border-teal-primary/20 rounded-full">
+            <div className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-teal-primary/10 to-cyan-400/10 border border-teal-primary/20 rounded-full backdrop-blur-sm">
               <span className="text-sm font-medium text-teal-primary">
                 ✨ AI Data Layer for SWFL
               </span>
@@ -200,10 +200,8 @@ export default function Hero() {
             <motion.button
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.95 }}
-              className="relative px-8 py-4 font-semibold text-base text-navy-dark rounded-xl overflow-hidden group"
+              className="relative px-8 py-4 font-semibold text-base text-navy-dark rounded-xl overflow-hidden group btn-gradient shadow-lg shadow-teal-primary/25 hover:shadow-teal-primary/40 transition-all"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-teal-primary via-cyan-400 to-teal-primary transition-all group-hover:scale-110" />
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-white/10 transition-opacity" />
               <span className="relative">Connect Your AI</span>
             </motion.button>
             <motion.button
@@ -221,9 +219,9 @@ export default function Hero() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-          className="relative h-[400px] md:h-[500px] lg:h-[600px]"
+          className="relative h-[400px] md:h-[500px] lg:h-[600px] animate-float"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-teal-primary/10 to-transparent rounded-3xl border border-white/5 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-gradient-to-br from-teal-primary/10 to-transparent rounded-3xl border border-white/5 backdrop-blur-sm glass-card-modern glow-teal" />
           <canvas ref={canvasRef} className="w-full h-full rounded-3xl" />
         </motion.div>
       </div>

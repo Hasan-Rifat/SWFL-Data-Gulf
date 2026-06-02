@@ -84,7 +84,7 @@ export default function MCPInstall() {
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-3 rounded-xl font-semibold transition-all ${
                   activeTab === tab
-                    ? "bg-gradient-to-r from-teal-primary to-cyan-400 text-navy-dark shadow-lg shadow-teal-primary/40"
+                    ? "btn-gradient text-navy-dark shadow-lg shadow-teal-primary/40"
                     : "bg-white/10 text-white border border-white/20 hover:bg-white/15 hover:border-white/30 backdrop-blur-sm"
                 }`}
                 whileHover={{ y: -2 }}
@@ -106,7 +106,7 @@ export default function MCPInstall() {
               className="relative group"
             >
               <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-primary/20 to-cyan-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur" />
-              <div className="relative bg-white/10 border border-teal-primary/30 rounded-2xl p-8 backdrop-blur-xl hover:bg-white/[0.15] hover:border-teal-primary/40 transition-all">
+              <div className="relative glass-card-modern border border-teal-primary/30 rounded-2xl p-8 hover:border-teal-primary/40 transition-all">
                 <p className="text-sm text-gray-400 mb-6">
                   {installCommands[activeTab].description}
                 </p>
