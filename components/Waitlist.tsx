@@ -55,8 +55,6 @@ export default function Waitlist() {
 
   return (
     <section className="relative py-32 px-6 md:px-8 z-10 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-primary/5 to-transparent pointer-events-none" />
       <div className="max-w-2xl mx-auto relative">
         {/* Section Header */}
         <motion.div
@@ -85,20 +83,20 @@ export default function Waitlist() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="glass-card-modern border border-teal-primary/30 rounded-2xl p-12 text-center glow-teal"
+              className="glass-card-modern border border-teal-primary/30 rounded-2xl p-12 text-center"
             >
               <motion.div
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center justify-center w-16 h-16 bg-teal-primary/20 rounded-full mb-4"
+                className="inline-flex items-center justify-center w-16 h-16 bg-teal-primary/15 rounded-full mb-4"
               >
                 <Check className="w-8 h-8 text-teal-primary" />
               </motion.div>
               <h3 className="text-2xl font-bold text-white mb-2">
-                You're on the list!
+                You&apos;re on the list!
               </h3>
               <p className="text-gray-400">
-                Check your email for updates. We'll reach out soon.
+                Check your email for updates. We&apos;ll reach out soon.
               </p>
             </motion.div>
           ) : (
@@ -132,7 +130,7 @@ export default function Waitlist() {
                 className="space-y-3"
               >
                 <label className="block text-sm font-medium text-gray-400">
-                  I'm interested in:
+                  I&apos;m interested in:
                 </label>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {interestOptions.map((option) => (
@@ -140,12 +138,12 @@ export default function Waitlist() {
                       key={option.id}
                       type="button"
                       onClick={() => toggleInterest(option.id)}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
                       className={`px-4 py-3 rounded-lg font-medium transition-all text-sm ${
                         interests.includes(option.id)
-                          ? "btn-gradient text-navy-dark border border-teal-primary"
-                          : "bg-white/5 text-white border border-white/10 hover:bg-white/10"
+                          ? "btn-gradient text-navy-dark border border-teal-primary/50"
+                          : "bg-white/[0.04] text-white border border-white/10 hover:bg-white/[0.08] hover:border-white/20"
                       }`}
                     >
                       {option.label}
@@ -165,7 +163,7 @@ export default function Waitlist() {
                 disabled={isLoading || interests.length === 0}
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full btn-gradient text-navy-dark py-4 rounded-xl font-semibold text-base transition-all shadow-lg shadow-teal-primary/25 hover:shadow-teal-primary/40 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full btn-gradient text-navy-dark py-4 rounded-xl font-semibold text-base transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading ? "Joining..." : "Join Waitlist"}
               </motion.button>

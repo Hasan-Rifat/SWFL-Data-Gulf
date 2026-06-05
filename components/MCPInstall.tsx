@@ -46,8 +46,6 @@ export default function MCPInstall() {
 
   return (
     <section className="relative py-32 px-6 md:px-8 z-10 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-teal-primary/5 via-transparent to-transparent pointer-events-none" />
       <div className="max-w-5xl mx-auto relative">
         {/* Section Header */}
         <motion.div
@@ -84,8 +82,8 @@ export default function MCPInstall() {
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-3 rounded-xl font-semibold transition-all ${
                   activeTab === tab
-                    ? "btn-gradient text-navy-dark shadow-lg shadow-teal-primary/40"
-                    : "bg-white/10 text-white border border-white/20 hover:bg-white/15 hover:border-white/30 backdrop-blur-sm"
+                    ? "btn-gradient text-navy-dark"
+                    : "bg-white/[0.04] text-white border border-white/10 hover:bg-white/[0.08] hover:border-white/20"
                 }`}
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
@@ -105,8 +103,7 @@ export default function MCPInstall() {
               transition={{ duration: 0.3 }}
               className="relative group"
             >
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-primary/20 to-cyan-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur" />
-              <div className="relative glass-card-modern border border-teal-primary/30 rounded-2xl p-8 hover:border-teal-primary/40 transition-all">
+              <div className="relative glass-card-modern border border-white/10 rounded-2xl p-8 hover:border-teal-primary/30 transition-all">
                 <p className="text-sm text-gray-400 mb-6">
                   {installCommands[activeTab].description}
                 </p>
@@ -118,14 +115,14 @@ export default function MCPInstall() {
                     onClick={() =>
                       handleCopy(activeTab as keyof typeof installCommands)
                     }
-                    className="absolute top-4 right-4 p-2 bg-teal-primary/20 hover:bg-teal-primary/30 rounded-lg transition-colors"
+                    className="absolute top-4 right-4 p-2 bg-white/[0.06] hover:bg-teal-primary/20 rounded-lg transition-colors"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     {copiedTab === activeTab ? (
                       <Check className="w-5 h-5 text-teal-primary" />
                     ) : (
-                      <Copy className="w-5 h-5 text-teal-primary" />
+                      <Copy className="w-5 h-5 text-gray-300" />
                     )}
                   </motion.button>
                 </div>
@@ -142,7 +139,7 @@ export default function MCPInstall() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <p className="inline-block bg-gradient-to-r from-teal-primary/10 to-cyan-400/10 border border-teal-primary/30 rounded-full px-6 py-3 text-gray-300 font-light">
+          <p className="inline-block bg-white/[0.04] border border-white/10 rounded-full px-6 py-3 text-gray-300 font-light">
             ✨ One-click install coming · ChatGPT integration in progress
           </p>
         </motion.div>

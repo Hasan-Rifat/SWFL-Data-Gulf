@@ -6,8 +6,6 @@ import {
   Bar,
   AreaChart,
   Area,
-  LineChart,
-  Line,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -61,7 +59,7 @@ const metricsData = [
 const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-navy-dark border border-teal-primary/20 rounded-lg p-3 shadow-xl">
+      <div className="bg-navy-dark border border-white/10 rounded-lg p-3 shadow-xl">
         <p className="text-teal-primary font-mono text-sm">
           {payload[0].name}: ${payload[0].value}
         </p>
@@ -98,8 +96,6 @@ export default function Charts() {
 
   return (
     <section className="relative py-32 px-6 md:px-8 z-10 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-teal-primary/5 via-transparent to-transparent pointer-events-none" />
       <div className="max-w-7xl mx-auto relative">
         {/* Section Header */}
         <motion.div
@@ -126,12 +122,8 @@ export default function Charts() {
           className="grid lg:grid-cols-2 gap-8 mb-12"
         >
           {/* Corridor Rents - Horizontal Bar Chart */}
-          <motion.div
-            variants={chartVariants}
-            className="relative group card-hover"
-          >
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-primary/20 to-cyan-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur" />
-            <div className="relative glass-card-modern border border-teal-primary/30 rounded-2xl p-8 hover:border-teal-primary/40 transition-all">
+          <motion.div variants={chartVariants} className="relative group">
+            <div className="relative glass-card-modern border border-white/10 rounded-2xl p-8 hover:border-teal-primary/30 transition-all">
               <h3 className="text-xl font-bold text-white mb-2">
                 Corridor Rents
               </h3>
@@ -146,7 +138,7 @@ export default function Charts() {
                 >
                   <CartesianGrid
                     strokeDasharray="3 3"
-                    stroke="rgba(255,255,255,0.1)"
+                    stroke="rgba(255,255,255,0.08)"
                   />
                   <XAxis type="number" stroke="rgba(255,255,255,0.5)" />
                   <YAxis
@@ -158,6 +150,7 @@ export default function Charts() {
                   <Bar
                     dataKey="rent"
                     fill="url(#colorGradient)"
+                    radius={[0, 6, 6, 0]}
                     isAnimationActive={showCharts}
                   />
                   <defs>
@@ -182,12 +175,8 @@ export default function Charts() {
           </motion.div>
 
           {/* Home Values - Area Chart */}
-          <motion.div
-            variants={chartVariants}
-            className="relative group card-hover"
-          >
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-primary/20 to-cyan-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur" />
-            <div className="relative glass-card-modern border border-teal-primary/30 rounded-2xl p-8 hover:border-teal-primary/40 transition-all">
+          <motion.div variants={chartVariants} className="relative group">
+            <div className="relative glass-card-modern border border-white/10 rounded-2xl p-8 hover:border-teal-primary/30 transition-all">
               <h3 className="text-xl font-bold text-white mb-2">
                 36-Month Home Values
               </h3>
@@ -228,9 +217,9 @@ export default function Charts() {
                   </defs>
                   <CartesianGrid
                     strokeDasharray="3 3"
-                    stroke="rgba(255,255,255,0.1)"
+                    stroke="rgba(255,255,255,0.08)"
                   />
-                  <XAxis stroke="rgba(255,255,255,0.5)" />
+                  <XAxis dataKey="month" stroke="rgba(255,255,255,0.5)" />
                   <YAxis stroke="rgba(255,255,255,0.5)" />
                   <Tooltip content={<CustomTooltip />} />
                   <Area
@@ -281,11 +270,7 @@ export default function Charts() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`glass-card-modern border rounded-2xl p-6 transition-all hover:scale-105 ${
-                metric.color === "teal"
-                  ? "border-teal-primary/30 hover:border-teal-primary/50"
-                  : "border-cyan-400/30 hover:border-cyan-400/50"
-              }`}
+              className="glass-card-modern border border-white/10 rounded-2xl p-6 transition-all hover:border-white/20"
             >
               <p className="text-sm text-gray-400 mb-2">{metric.label}</p>
               <div className="flex items-end justify-between">
@@ -306,8 +291,8 @@ export default function Charts() {
                 <div
                   className={`w-12 h-12 rounded-lg flex items-center justify-center text-xl ${
                     metric.color === "teal"
-                      ? "bg-teal-primary/20 text-teal-primary"
-                      : "bg-cyan-400/20 text-cyan-400"
+                      ? "bg-teal-primary/10 text-teal-primary"
+                      : "bg-cyan-400/10 text-cyan-400"
                   }`}
                 >
                   📊
