@@ -88,36 +88,6 @@ function FloridaDataViz() {
         {/* Grid background */}
         <rect x="0" y="0" width="600" height="520" fill="url(#grid)" />
 
-        {/* Florida outline (stylized) */}
-        <path
-          d="M150 70
-             L315 68 L360 78 L398 96 L428 124 L445 152 L442 175
-             L425 195 L390 208 L350 216 L322 232 L317 258 L330 290
-             L358 325 L370 350 L360 372 L338 392 L310 404 L283 413
-             L256 416 L234 408 L220 390 L214 366 L208 342 L196 322
-             L176 302 L164 278 L160 252 L167 228 L180 206 L193 182
-             L197 154 L191 128 L174 103 Z"
-          fill="rgba(255,255,255,0.02)"
-          stroke="url(#flStroke)"
-          strokeWidth="1.6"
-        />
-
-        {/* Lee County highlight (approx) */}
-        <path
-          d="M220 330 L245 324 L268 332 L272 350 L258 366 L232 370 L216 356 Z"
-          fill="rgba(0,212,170,0.16)"
-          stroke="#00d4aa"
-          strokeWidth="1.1"
-        />
-
-        {/* Collier County highlight (approx) */}
-        <path
-          d="M272 350 L300 344 L320 360 L316 386 L292 404 L262 396 L258 366 Z"
-          fill="rgba(34,211,238,0.14)"
-          stroke="#22d3ee"
-          strokeWidth="1.1"
-        />
-
         {/* Animated incoming data lines + packets */}
         {particles.map((p) => (
           <g key={p.id}>
@@ -155,40 +125,6 @@ function FloridaDataViz() {
             />
           </g>
         ))}
-
-        {/* Data Connected center node */}
-        <circle cx={swfl.x} cy={swfl.y} r="6" fill="#00d4aa" />
-        <circle
-          cx={swfl.x}
-          cy={swfl.y}
-          r="6"
-          fill="none"
-          stroke="rgba(255,255,255,0.5)"
-          strokeWidth="1"
-        />
-
-        {/* Calm expanding ring (no glow) */}
-        <motion.circle
-          cx={swfl.x}
-          cy={swfl.y}
-          r="16"
-          fill="none"
-          stroke="rgba(0,212,170,0.5)"
-          strokeWidth="1.2"
-          animate={{ r: [16, 40, 16], opacity: [0.5, 0, 0.5] }}
-          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-        />
-
-        <text
-          x={swfl.x + 20}
-          y={swfl.y - 12}
-          fill="#a7f3e4"
-          fontSize="12"
-          fontWeight="600"
-          style={{ letterSpacing: "0.4px" }}
-        >
-          Data Connected
-        </text>
       </svg>
     </div>
   );
