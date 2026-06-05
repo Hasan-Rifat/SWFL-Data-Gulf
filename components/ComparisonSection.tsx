@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { QAData } from "@/types";
 import { useTypewriter } from "@/hooks/useTypewriter";
+import Image from "next/image";
 
 /**
  * Q&A data for comparing generic AI vs SWFL Data Gulf responses
@@ -170,9 +171,14 @@ export default function ComparisonSection() {
             <div className="relative glass-card-modern rounded-3xl p-8 lg:p-10 border border-teal-primary/30 transition-all min-h-[450px] hover:border-teal-primary/50 glow-teal hover:glow-teal-strong">
               <div className="flex items-center gap-4 mb-8 pb-6 border-b border-teal-primary/20">
                 <div className="w-14 h-14 rounded-2xl bg-teal-primary/20 flex items-center justify-center text-2xl">
-                  📊
+                  <Image
+                    alt="website logo"
+                    src="/logo.webp"
+                    width={44}
+                    height={44}
+                  />
                 </div>
-                <h3 className="text-2xl font-semibold bg-gradient-to-r from-teal-primary to-cyan-400 bg-clip-text text-transparent">
+                <h3 className="text-2xl font-semibold bg-gradient-to-r from-teal-primary ">
                   SWFL Data Gulf
                 </h3>
               </div>
