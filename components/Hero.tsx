@@ -88,42 +88,24 @@ function FloridaDataViz() {
         {/* Grid background */}
         <rect x="0" y="0" width="600" height="520" fill="url(#grid)" />
 
-        {/* Animated incoming data lines + packets */}
+        {/* Animated incoming data lines */}
         {particles.map((p) => (
-          <g key={p.id}>
-            <motion.path
-              d={`M ${p.x1} ${p.y1} Q ${p.cx} ${p.cy} ${p.x2} ${p.y2}`}
-              fill="none"
-              stroke="rgba(94,234,212,0.28)"
-              strokeWidth="1"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: [0, 1], opacity: [0, 0.7, 0] }}
-              transition={{
-                duration: p.duration,
-                delay: p.delay,
-                repeat: Infinity,
-                repeatDelay: 0.4,
-                ease: "easeInOut",
-              }}
-            />
-            <motion.circle
-              r="1.8"
-              fill="#5eead4"
-              initial={{ cx: p.x1, cy: p.y1, opacity: 0 }}
-              animate={{
-                cx: [p.x1, p.x2],
-                cy: [p.y1, p.y2],
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: p.duration,
-                delay: p.delay,
-                repeat: Infinity,
-                repeatDelay: 0.4,
-                ease: "easeInOut",
-              }}
-            />
-          </g>
+          <motion.path
+            key={p.id}
+            d={`M ${p.x1} ${p.y1} Q ${p.cx} ${p.cy} ${p.x2} ${p.y2}`}
+            fill="none"
+            stroke="rgba(94,234,212,0.28)"
+            strokeWidth="1"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: [0, 1], opacity: [0, 0.7, 0] }}
+            transition={{
+              duration: p.duration,
+              delay: p.delay,
+              repeat: Infinity,
+              repeatDelay: 0.4,
+              ease: "easeInOut",
+            }}
+          />
         ))}
       </svg>
     </div>
@@ -153,7 +135,7 @@ export default function Hero() {
       filter: "blur(0px)",
       transition: {
         duration: 0.7,
-        type: "spring",
+        type: "spring" as const,
         stiffness: 80,
         damping: 12,
       },
