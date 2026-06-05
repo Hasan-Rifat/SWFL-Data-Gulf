@@ -41,8 +41,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-5 gap-12 mb-12">
           {/* Brand Section */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20, scale: 0.98, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="md:col-span-1"
@@ -84,8 +84,8 @@ export default function Footer() {
           {Object.entries(footerLinks).map((section, idx) => (
             <motion.div
               key={section[0]}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, scale: 0.98, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               viewport={{ once: true }}
             >
@@ -108,8 +108,8 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.98, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
           className="border-t border-white/5 pt-8"

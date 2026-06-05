@@ -58,8 +58,8 @@ export default function Waitlist() {
       <div className="max-w-2xl mx-auto relative">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, scale: 0.98, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-12"
@@ -74,8 +74,8 @@ export default function Waitlist() {
 
         {/* Form */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, scale: 0.98, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
         >
@@ -103,8 +103,18 @@ export default function Waitlist() {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Email Input */}
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{
+                  opacity: 0,
+                  y: 10,
+                  scale: 0.98,
+                  filter: "blur(6px)",
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  filter: "blur(0px)",
+                }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
@@ -123,8 +133,18 @@ export default function Waitlist() {
 
               {/* Interest Checkboxes */}
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{
+                  opacity: 0,
+                  y: 10,
+                  scale: 0.98,
+                  filter: "blur(6px)",
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  filter: "blur(0px)",
+                }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
                 className="space-y-3"

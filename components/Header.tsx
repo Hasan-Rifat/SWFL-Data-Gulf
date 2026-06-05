@@ -29,9 +29,14 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, x: -20, scale: 0.95, filter: "blur(8px)" }}
+          animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
+          transition={{
+            duration: 0.6,
+            type: "spring",
+            stiffness: 100,
+            damping: 15,
+          }}
           className="flex items-center gap-3"
         >
           <div className="relative">
@@ -50,9 +55,15 @@ export default function Header() {
 
         {/* Navigation */}
         <motion.nav
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          initial={{ opacity: 0, x: 20, scale: 0.95, filter: "blur(8px)" }}
+          animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
+          transition={{
+            duration: 0.6,
+            delay: 0.1,
+            type: "spring",
+            stiffness: 100,
+            damping: 15,
+          }}
           className="hidden md:flex items-center gap-8"
         >
           <Link

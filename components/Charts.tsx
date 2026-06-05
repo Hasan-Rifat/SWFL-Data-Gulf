@@ -87,10 +87,12 @@ export default function Charts() {
   };
 
   const chartVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 30, scale: 0.98, filter: "blur(8px)" },
     visible: {
       opacity: 1,
       y: 0,
+      scale: 1,
+      filter: "blur(0px)",
     },
   };
 
@@ -99,8 +101,8 @@ export default function Charts() {
       <div className="max-w-7xl mx-auto relative">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, scale: 0.98, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-20"
@@ -266,8 +268,8 @@ export default function Charts() {
           {metricsData.map((metric, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, scale: 0.98, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="glass-card-modern border border-white/10 rounded-2xl p-6 transition-all hover:border-white/20"

@@ -197,20 +197,43 @@ function FloridaDataViz() {
 export default function Hero() {
   const badgeColor = "#00d4aa";
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95, filter: "blur(10px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      filter: "blur(0px)",
+      transition: {
+        duration: 0.7,
+        type: "spring",
+        stiffness: 80,
+        damping: 12,
+      },
+    },
+  };
+
   return (
     <section className="relative min-h-screen flex items-center px-6 md:px-8 z-10 pt-24">
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
           className="space-y-8"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+          <motion.div variants={itemVariants}>
             <div
               className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full backdrop-blur-sm"
               style={{
@@ -242,9 +265,7 @@ export default function Hero() {
 
         {/* Right: Florida Data Visualization */}
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+          variants={itemVariants}
           className="relative h-[400px] md:h-[500px] lg:h-[600px] animate-float"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-white/[0.04] to-transparent rounded-3xl border border-white/10 backdrop-blur-sm glass-card-modern" />
